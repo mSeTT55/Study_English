@@ -1,0 +1,19 @@
+topic_id,slug,label_pt,description,priority
+T001,home,Casa e tarefas,Ações e objetos domésticos; pequenas frases no presente e passado,high
+T002,daily_life,Rotina e pensamentos,Cansaço; sentimentos; trabalho em casa; pequenas decisões,high
+T003,remote_work,Home office,Reuniões; computador; acessar sites; colaborar remotamente,high
+T004,discord,Discord e socialização,Pedir repetição; entrar e sair; conversa informal internacional,high
+T005,job_interviews,Entrevistas de TI,Explicar experiência; perguntas de entrevista; projetos; troubleshooting,high
+T006,devops_linux,Linux e DevOps,Infraestrutura; cloud; redes; CI/CD; troubleshooting,high
+T007,programming,Programação,Escrever código; frameworks; APIs; arquitetura; tutoriais,high
+T008,f1,Fórmula 1,Resultados; corridas; pilotos; equipes; opiniões,high
+T009,football,Futebol e esportes,Partidas; resultados; jogadores; opiniões,medium
+T010,movies_series,Filmes e séries,Narrar cenas; compreender diálogo; comentar personagens,high
+T011,news,Notícias por nível,Reading e listening sobre acontecimentos com data e fonte,high
+T012,stories,Histórias graduadas,Leitura extensa; escuta; recontagem e shadowing,high
+T013,pronunciation,Pronúncia e uso real,Acento; ritmo; phrasal verbs; situações autênticas,high
+T014,data_ai,Dados e IA,Data engineering; analytics; LLMs; IA; aplicações,high
+T015,hardware,Hardware e tecnologia,PC; peças; dispositivos; desempenho; lançamentos,medium
+T016,gaming,Jogos online,Partidas; coordenação de time; Discord; reações,high
+T017,curiosity,Curiosidades,Ciência; história; cotidiano; perguntas espontâneas,medium
+T018,pt_to_en_tech,Explicar tecnologia em inglês,Aprender conteúdo técnico em português e depois explicar em inglês,high
