@@ -32,6 +32,25 @@ Fields: `lesson_id` (L###), `title`, `topic_id`, `source_id` (optional S###), `t
 Fields: `from_type`, `from_id`, `relation`, `to_type`, `to_id`, `notes`.
 Recognized type values: `verb`, `grammar`, `chunk`, `topic`, `source`, `lesson`; IDs must exist in their respective tables. Relations may be semantic and do not prove learner proficiency.
 
+## Verified synchronization state (read-before-write, read-after-write)
+See `docs/sync_protocol.md` for full preflight/checkpoint/recovery logic.
+
+### `state/sync_manifest.json`
+- `schema_version`: current version `1`.
+- `generation`: integer incremented only on a fully verified checkpoint transaction.
+- `status`: `baseline_no_study_session` for an untouched initial dataset; `verified` after a confirmed learning checkpoint; `partial`, `needs_reconciliation`, or `unverified` when integrity cannot be established (do **not** report those as success).
+- `verified_at`: ISO-8601 timestamp with timezone of the read-back verification; null for baseline.
+- `last_data_commit_sha`: the final changed data-file commit SHA (not the manifest's own SHA; avoiding self-reference).
+- `session_id`, `checkpoint_id`, `session_status`: the session/last checkpoint referenced and idle|active|paused.
+- `streams`: per learning/exposure/context JSONL path with `count`, `last_id`, `last_at`, `blob_sha`.
+- `state_files`: per current/active state and summary CSV path with `blob_sha`. GitHub reports blob SHAs from `fetch_file`; an offline git checkout can recompute Git's blob SHA from the file bytes.
+- A fully verified manifest is updated **last**, only after each data file is read back and confirmed. On a partial save, preserve the last verified manifest as a recovery reference until reconciliation succeeds.
+
+### Event grouping and recovery
+Optional `sync_batch_id` can appear in all three JSONL event types, allowing recovery from a partially committed batch. Use stable IDs for idempotent merge and never append duplicates. The next session compares the actual count/latest ID/timestamp/blob SHA and session state to the manifest. Check the available transcript if recent content seems missing. Reconstruct only recorded events and genuinely visible utterances; otherwise mark a potential gap. An unknown time interval is **not** a guaranteed missing attempt.
+
+Run `python scripts/reconcile_state.py` from a checkout for a local audit. In ChatGPT Web/Voice, execute the same checks by reading GitHub through available tools. Recalculate mastery only after event integrity is resolved.
+
 ## Learning history
 
 ## Voice-first bilingual interaction and session continuity
