@@ -44,6 +44,9 @@ Study_English/
 │       ├── learning_events.jsonl    # Append-only real practice attempts
 │       ├── mastery.csv              # Summary per item, skill and form
 │       └── sessions.csv             # Completed sessions only
+├── scripts/
+│   ├── validate_data.py            # Validate CSV/JSONL and references
+│   └── recalculate_mastery.py      # Derive review state from real attempts
 └── state/
     └── current_state.md             # Current priorities / next session
 ```
@@ -56,6 +59,18 @@ Study_English/
 5. At the end, record only actual attempts and identify whether files were successfully updated.
 
 **Important:** putting `AGENTS.md` in GitHub does **not** make ChatGPT automatically read it. Read/write capability depends on the active tools and permissions. Python scripts (if added later) will not run automatically merely because they are in the repository.
+
+## Optional maintenance commands
+
+Run these in a Python environment from the repository root (stdlib only):
+
+```bash
+python scripts/validate_data.py
+python scripts/recalculate_mastery.py --dry-run
+python scripts/recalculate_mastery.py
+```
+
+The last command overwrites the derived `mastery.csv` view from actual `learning_events.jsonl` evidence. **It does not run automatically in GitHub or ChatGPT Web.** The scoring thresholds are provisional and can be refined as real practice data accumulates.
 
 ## Evidence, not wishful scores
 A word seen in a screenshot is not a word mastered. Historical lessons are seeded as **known content / previous exposure** without invented test scores. See [schema](docs/schema.md) for stable IDs and assessment levels.
