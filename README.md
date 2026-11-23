@@ -32,7 +32,8 @@ Study_English/
 │   ├── PROJECT_PROMPT.md            # Paste into ChatGPT Project Instructions
 │   └── LEARNING_METHOD.md           # Pedagogical principles
 ├── docs/
-│   └── schema.md                    # Exact data contracts
+│   ├── schema.md                    # Exact data contracts
+│   └── sync_protocol.md            # Read-back verification and crash recovery
 ├── data/
 │   ├── content/
 │   │   ├── verbs.csv                # Conjugations and frequency priority
@@ -50,9 +51,11 @@ Study_English/
 │       └── sessions.csv             # Completed sessions only
 ├── scripts/
 │   ├── validate_data.py            # Validate CSV/JSONL and references
+│   ├── reconcile_state.py          # Compare logs vs last verified snapshot
 │   └── recalculate_mastery.py      # Derive review state from real attempts
 └── state/
-    ├── active_session.md            # Live/paused topic + pending turn
+    ├── active_session.md           # Live/paused topic + pending turn
+    ├── sync_manifest.json          # Last verified IDs/counts/file hashes
     └── current_state.md            # Current priorities / next session
 ```
 
@@ -61,16 +64,16 @@ Study_English/
 2. Connect an authorized GitHub app/workflow with the permissions available to that chat. The **standard** GitHub app may expose only reading; do not infer writes from a connected status.
 3. Start talking naturally in the same ChatGPT Project. The tutor should check [AGENTS.md](AGENTS.md), [active_session.md](state/active_session.md), and [current_state.md](state/current_state.md) at session entry if tools permit, resuming any unfinished topic.
 4. Continue mainly in English, with Portuguese explanations/questions whenever needed. Review weak content when starting *fresh*, not in the middle of an unfinished topic.
-5. At topic boundaries and before a normal goodbye, the tutor should proactively attempt batched checkpoints and report the **actual** save status. It cannot save after an abrupt call termination or run on its own while ChatGPT is closed.
+5. At topic boundaries and before a normal goodbye, the tutor **writes and reads back** checkpoint data, then updates `sync_manifest.json` only after confirming it. At the beginning of the next session it automatically compares logged records against the last verified manifest and investigates differences. A disrupted call is checked on the next start.
 
 ### How conversation memory survives context limits
 - **Active checkpoint:** current topic, unfinished question, recent corrections and the next move.
 - **Checkpoint log:** short summaries of natural topic transitions, not complete private transcripts.
 - **Learning and exposure events:** separate what the learner actually *produced* from what they only *encountered*.
 - **Project memory:** can help retrieve prior chats but cannot replace verified repository state.
-A checkpoint is a best-effort write at an actual conversational turn, not a continuously running background recorder.
+A checkpoint is an actual, **verified read-after-write transaction** when the connected GitHub operations are available, not a continuously running background recorder. If Voice stops abruptly, startup reconciliation compares event IDs, timestamps, last stored state and GitHub changes; a diff cannot reconstruct unrecorded speech.
 
-**Important:** putting `AGENTS.md` in GitHub does **not** make ChatGPT automatically read it. Read/write capability depends on the active tools and permissions. Python scripts in this repository do not run automatically merely because they are in GitHub.
+**Important:** putting `AGENTS.md` in GitHub does **not** make ChatGPT automatically read it. The Project prompt requests startup reads and reconciliation; verify the operation actually happened. Read/write capability depends on the tools active in the session. Python scripts in this repository do not run automatically merely because they are in GitHub.
 
 ## Optional maintenance commands
 
@@ -78,6 +81,7 @@ Run these in a Python environment from the repository root (stdlib only):
 
 ```bash
 python scripts/validate_data.py
+python scripts/reconcile_state.py
 python scripts/recalculate_mastery.py --dry-run
 python scripts/recalculate_mastery.py
 ```
