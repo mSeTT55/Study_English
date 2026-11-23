@@ -3,7 +3,7 @@ C001,I spent the afternoon there.,Passei a tarde lá.,daily_life,I spent + time 
 C002,I didn't do much yesterday.,Não fiz muita coisa ontem.,daily_life,I didn't do much + time,G034,T002,prior_conversation,After didn't use base form do.
 C003,I had lunch with my parents yesterday.,Almocei com meus pais ontem.,daily_life,I had lunch with + person,G033,T002,prior_conversation,Natural collocation: have lunch → had lunch.
 C004,I taught my dad to ride a motorcycle.,Ensinei meu pai a andar de moto.,daily_life,I taught + person + to + verb,G033,T002,prior_conversation,teach → taught.
-C005,This smells good.,Isso cheira bem.,daily_life,This smells + adjective,G025,T001,prior_conversation,Third person singular smells.
+C005,This smells good.,Isso cheira bem.,daily_life,This smells + adjective,G029,T001,prior_conversation,Third person singular smells.
 C006,I went to bed late.,Fui dormir tarde.,daily_life,I went to bed + time,G033,T002,corrected_example,Natural correction of literal 'I went sleep late'.
 C007,I'm turning on my PC.,Estou ligando meu computador.,home,I'm + verb-ing,G041,T001,curated_example,Turn on = ligar aparelho.
 C008,I'm opening a website.,Estou abrindo um site.,home,I'm + verb-ing + object,G041,T001,curated_example,Open a website / go to a website.
