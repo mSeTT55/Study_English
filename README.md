@@ -61,7 +61,7 @@ Study_English/
 
 ## How to start in ChatGPT Web / Voice
 1. Replace the project instructions with [the Voice-first prompt](instructions/PROJECT_PROMPT.md). It says how to read and synchronize without requiring repeated "remember/save" commands.
-2. Connect an authorized GitHub app/workflow with the permissions available to that chat. The **standard** GitHub app may expose only reading; do not infer writes from a connected status.
+2. Use the project's connected GitHub account with read/write access. Writing has been confirmed in the current text chat; each future Voice transaction must still confirm its own writes by reading the saved data back.
 3. Start talking naturally in the same ChatGPT Project. The tutor should check [AGENTS.md](AGENTS.md), [active_session.md](state/active_session.md), and [current_state.md](state/current_state.md) at session entry if tools permit, resuming any unfinished topic.
 4. Continue mainly in English, with Portuguese explanations/questions whenever needed. Review weak content when starting *fresh*, not in the middle of an unfinished topic.
 5. At topic boundaries and before a normal goodbye, the tutor **writes and reads back** checkpoint data, then updates `sync_manifest.json` only after confirming it. At the beginning of the next session it automatically compares logged records against the last verified manifest and investigates differences. A disrupted call is checked on the next start.
@@ -74,6 +74,10 @@ Study_English/
 A checkpoint is an actual, **verified read-after-write transaction** when the connected GitHub operations are available, not a continuously running background recorder. If Voice stops abruptly, startup reconciliation compares event IDs, timestamps, last stored state and GitHub changes; a diff cannot reconstruct unrecorded speech.
 
 **Important:** putting `AGENTS.md` in GitHub does **not** make ChatGPT automatically read it. The Project prompt requests startup reads and reconciliation; verify the operation actually happened. Read/write capability depends on the tools active in the session. Python scripts in this repository do not run automatically merely because they are in GitHub.
+
+## Independent GitHub validation
+
+The GitHub Actions workflow [.github/workflows/validate-learning-data.yml](.github/workflows/validate-learning-data.yml) runs the two integrity checks when a new synchronization manifest is pushed to `main`. This supplies an additional repository-side validation, separate from the tutor's required read-after-write verification. A workflow file is not proof that a run passed; inspect the actual Actions result.
 
 ## Optional maintenance commands
 
