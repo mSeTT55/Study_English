@@ -34,6 +34,36 @@ Recognized type values: `verb`, `grammar`, `chunk`, `topic`, `source`, `lesson`;
 
 ## Learning history
 
+## Voice-first bilingual interaction and session continuity
+The Project is primarily used with ChatGPT Voice. English is the target/practice language; Portuguese is available for explanations, questions, clarifying grammar, and retrieving conversation meaning. Do not force English-only mode. Speech-to-text artifacts or uncertainty are not proof of a grammar or pronunciation error.
+
+### `state/active_session.md` (mutable)
+One small **current** live/paused checkpoint. Contains a session ID if known, status (idle|active|paused), last checkpoint timestamp, current topic, learner intent, last meaningful learner turn *summary*, the tutor's last unanswered question (if any), pending correction or re-test, recently encountered items, observed independent usage, and next conversational move. Do not store raw private transcripts. Update at natural boundaries and before a known goodbye, only if current tools permit.
+
+### `data/learning/context_checkpoints.jsonl` (append-only)
+A log of compact **conversation continuity snapshots** (one object per line) taken at natural boundaries, not every utterance. Required keys:
+- `checkpoint_id` (unique string), `session_id` (may be empty for an unstarted chat), `created_at` (ISO-8601 with offset), `mode` (voice|text|unknown), `topic_id` (optional T###).
+- `conversation_summary`: brief, non-sensitive context; `learner_intent`: why they were talking; `last_tutor_question`: exact short question if unfinished; `pending_reply`: boolean; `next_move`: what to say/do next.
+Optional fields: `recent_item_ids`, `error_patterns`, `pending_review_ids`, `write_notes`. Do not put full conversations or personal names in this public file. A checkpoint is **not** an assessed language attempt.
+
+### `data/learning/exposure_events.jsonl` (append-only)
+Record actual encounters separately from production, one JSON object per line. Required keys:
+- `exposure_id` (unique string), `session_id`, `occurred_at`, `item_type` (verb|grammar|chunk), `item_id` (stable ID), `exposure_type` (introduced|heard|read|shadowed|explained|noticed), `channel` (voice|text|reading|video|discord), `source_id` (optional S###), `context_summary` (short learner-safe note).
+"Introduced" only means the tutor showed/taught content; "heard/read" means a specific exposure actually occurred. Do not infer successful comprehension or spontaneous usage from exposure. An item's absence from `learning_events.jsonl` means **production not observed in the tracked sessions**, not "never used" or "not learned".
+
+### `data/learning/learning_events.jsonl` — Voice considerations
+Existing required fields apply; optional `channel`, `speech_transcript_uncertain` (boolean) and `origin` (exercise|spontaneous_conversation|reported_discord) may be added. A statement actually produced spontaneously can be recorded as `independent_production`. If voice recognition makes the answer doubtful, prefer `unassessed` or clarify once; don't assign a wrong score or claim to measure real pronunciation solely from text.
+
+### Synchronization procedure
+1. Read current state and any valid active checkpoint at session startup.
+2. During live conversation, keep the last turn's immediate context locally so the next response addresses it; GitHub is the **durable** continuation layer, not an excuse to reread on every word.
+3. When an exercise block, topic transition, important correction cluster or expected ending occurs, attempt an authorized write: append exposures and real assessment events, append a context checkpoint, update active_session.md, then recompute/update mastery and current_state.md if justified.
+4. Avoid frequent saves during continuous Voice; prefer concise batching that does not break conversation.
+5. For each mutable path, fetch its current version/SHA before overwriting it; preserve already-written rows, avoid duplicate event IDs, and verify the final commit. If one write fails, report partial success, never all-or-nothing success.
+6. End a normal session with a session summary and idle active_session; keep pending reviews in current_state.md. No assumption of a callback when Voice is closed abruptly, no background writer, no guaranteed plugin availability.
+7. All content remains minimally identifying because this GitHub repository is public.
+
+
 ### `data/learning/learning_events.jsonl`
 Exactly one JSON object per line; append-only. Zero bytes is valid for no practice events. Required fields per event:
 - `event_id`: unique E#### or UUID.
@@ -65,10 +95,10 @@ Semicolon-separated topic/item IDs. Only record actually completed sessions.
 `state/current_state.md` is a human-readable, compact pointer: current focus, imported exposures, weak skills supported by evidence, due reviews, pending diagnostic and planned next activity. It is NOT the sole source of truth.
 
 ## Workflow
-1. Before lesson: load state, then relevant catalogs and learning evidence.
+1. Before lesson: load active session, current state, then relevant catalogs, exposure records, checkpoints and learning evidence.
 2. Active review and new content are selected against relevant topics and due items.
 3. On real responses: append events and compute/adjust mastery from evidence; don't overwrite raw events.
-4. Close the session and update current state.
+4. Checkpoint meaningfully during the session when possible; at closure, summarize completed work and update current state.
 5. Confirm GitHub commit or explain that persistence did not occur.
 6. Revalidate all IDs and CSV syntax after writes; avoid concurrent edits to the same path.
 
