@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "generation": 0,
+  "status": "baseline_no_study_session",
+  "verified_at": null,
+  "last_data_commit_sha": null,
+  "session_id": null,
+  "checkpoint_id": null,
+  "session_status": "idle",
+  "streams": {
+    "data/learning/learning_events.jsonl": {
+      "count": 0,
+      "last_id": null,
+      "last_at": null,
+      "blob_sha": null
+    },
+    "data/learning/exposure_events.jsonl": {
+      "count": 0,
+      "last_id": null,
+      "last_at": null,
+      "blob_sha": null
+    },
+    "data/learning/context_checkpoints.jsonl": {
+      "count": 0,
+      "last_id": null,
+      "last_at": null,
+      "blob_sha": null
+    }
+  },
+  "state_files": {
+    "state/active_session.md": {
+      "blob_sha": null
+    },
+    "state/current_state.md": {
+      "blob_sha": null
+    },
+    "data/learning/mastery.csv": {
+      "blob_sha": null
+    },
+    "data/learning/sessions.csv": {
+      "blob_sha": null
+    }
+  },
+  "notes": "Baseline only. Fill verified_at, blob_shas, committed IDs and hashes after the first real learning-session transaction. No performance or conversation data has yet been observed."
+}
