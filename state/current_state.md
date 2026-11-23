@@ -2,6 +2,7 @@
 
 Updated: 2026-11-23
 Project status: **baseline seeded / diagnostic pending**
+Interaction preference: **voice-first bilingual; English for practice, Portuguese for explanations and questions.** The tutor should proactively attempt checkpoint writes at natural transitions when authorized. Current session: none recorded.
 
 ## Historical exposure imported (NOT evidence of mastery)
 - The `verbs.csv` table includes 11 regular and 13 irregular verbs from user-provided screenshots, plus 4 verbs observed in prior exercises.
@@ -22,6 +23,9 @@ No due dates can be justified until practice events are recorded.
 
 ## Learning principle
 Prioritize meaningful retrieval and communication. Introduce new material only after checking old weak items. Consider a small Discord speaking exchange if the learner wants a real interlocutor; do not record that it happened until reported.
+
+## Continuity protocol
+Read `state/active_session.md` first; resume pending topic/question if one exists. Keep an exposure log separate from real scored attempts and save compact topic checkpoints when GitHub writes are available. This preference is a **policy**, not a verified example of automation succeeding in Voice.
 
 ## Persistence
 Repository contents are baseline catalogs and documentation. This file should be overwritten with a compact, truthful summary after each actual persisted study session.
