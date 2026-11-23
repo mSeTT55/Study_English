@@ -1,0 +1,47 @@
+pattern_id,category,tense,person,form,formula,example_en,example_pt,note
+G001,to_be,present,I,affirmative,subject + be + complement,I am ready.,Estou/estava/estarei pronto.,Choose tense-specific translation from context.
+G002,to_be,present,I,negative,subject + be + not + complement,I am not ready.,Não estou/estava/estarei pronto.,Choose tense-specific translation from context.
+G003,to_be,present,I,question,be + subject + complement?,Am I ready?,Estou/estava/estarei pronto?,Choose tense-specific translation from context.
+G004,to_be,present,I,negative_question,be + subject + complement?,Aren't I ready?,Não estou/estava/estarei pronto?,Use 'Aren't I?' in standard informal English.
+G005,to_be,present,he/she/it,affirmative,subject + be + complement,He is ready.,Estou/estava/estarei pronto.,Choose tense-specific translation from context.
+G006,to_be,present,he/she/it,negative,subject + be + not + complement,He isn't ready.,Não estou/estava/estarei pronto.,Choose tense-specific translation from context.
+G007,to_be,present,he/she/it,question,be + subject + complement?,Is he ready?,Estou/estava/estarei pronto?,Choose tense-specific translation from context.
+G008,to_be,present,he/she/it,negative_question,be + subject + complement?,Isn't he ready?,Não estou/estava/estarei pronto?,Choose tense-specific translation from context.
+G009,to_be,present,you/we/they,affirmative,subject + be + complement,You are ready.,Estou/estava/estarei pronto.,Choose tense-specific translation from context.
+G010,to_be,present,you/we/they,negative,subject + be + not + complement,You aren't ready.,Não estou/estava/estarei pronto.,Choose tense-specific translation from context.
+G011,to_be,present,you/we/they,question,be + subject + complement?,Are you ready?,Estou/estava/estarei pronto?,Choose tense-specific translation from context.
+G012,to_be,present,you/we/they,negative_question,be + subject + complement?,Aren't you ready?,Não estou/estava/estarei pronto?,Choose tense-specific translation from context.
+G013,to_be,past,I/he/she/it,affirmative,subject + be + complement,I was tired.,Estou/estava/estarei cansado.,Choose tense-specific translation from context.
+G014,to_be,past,I/he/she/it,negative,subject + be + not + complement,I wasn't tired.,Não estou/estava/estarei cansado.,Choose tense-specific translation from context.
+G015,to_be,past,I/he/she/it,question,be + subject + complement?,Was I tired?,Estou/estava/estarei cansado?,Choose tense-specific translation from context.
+G016,to_be,past,I/he/she/it,negative_question,be + subject + complement?,Wasn't I tired?,Não estou/estava/estarei cansado?,Choose tense-specific translation from context.
+G017,to_be,past,you/we/they,affirmative,subject + be + complement,You were tired.,Estou/estava/estarei cansado.,Choose tense-specific translation from context.
+G018,to_be,past,you/we/they,negative,subject + be + not + complement,You weren't tired.,Não estou/estava/estarei cansado.,Choose tense-specific translation from context.
+G019,to_be,past,you/we/they,question,be + subject + complement?,Were you tired?,Estou/estava/estarei cansado?,Choose tense-specific translation from context.
+G020,to_be,past,you/we/they,negative_question,be + subject + complement?,Weren't you tired?,Não estou/estava/estarei cansado?,Choose tense-specific translation from context.
+G021,to_be,future,all,affirmative,subject + be + complement,I will be ready.,Estou/estava/estarei pronto.,Choose tense-specific translation from context.
+G022,to_be,future,all,negative,subject + be + not + complement,I won't be ready.,Não estou/estava/estarei pronto.,Choose tense-specific translation from context.
+G023,to_be,future,all,question,be + subject + complement?,Will I be ready?,Estou/estava/estarei pronto?,Choose tense-specific translation from context.
+G024,to_be,future,all,negative_question,be + subject + complement?,Won't I be ready?,Não estou/estava/estarei pronto?,Choose tense-specific translation from context.
+G025,auxiliary,present,I/you/we/they,affirmative,subject + verb (+s in 3rd person present),I work.,,Present: base form after do.
+G026,auxiliary,present,I/you/we/they,negative,subject + don't/doesn't/didn't + base,I don't work.,,Present: base form after do.
+G027,auxiliary,present,I/you/we/they,question,do/does/did + subject + base?,Do I work?,,Present: base form after do.
+G028,auxiliary,present,I/you/we/they,negative_question,don't/doesn't/didn't + subject + base?,Don't I work?,,Present: base form after do.
+G029,auxiliary,present,he/she/it,affirmative,subject + verb (+s in 3rd person present),He works.,,After does use base form work not works.
+G030,auxiliary,present,he/she/it,negative,subject + don't/doesn't/didn't + base,He doesn't work.,,After does use base form work not works.
+G031,auxiliary,present,he/she/it,question,do/does/did + subject + base?,Does he work?,,After does use base form work not works.
+G032,auxiliary,present,he/she/it,negative_question,don't/doesn't/didn't + subject + base?,Doesn't he work?,,After does use base form work not works.
+G033,auxiliary,past,all,affirmative,subject + verb (+s in 3rd person present),I worked.,,After did use base form work.
+G034,auxiliary,past,all,negative,subject + don't/doesn't/didn't + base,I didn't work.,,After did use base form work.
+G035,auxiliary,past,all,question,do/does/did + subject + base?,Did I work?,,After did use base form work.
+G036,auxiliary,past,all,negative_question,don't/doesn't/didn't + subject + base?,Didn't I work?,,After did use base form work.
+G037,auxiliary,future,all,affirmative,subject + will + base,I will work.,,After will use base form work.
+G038,auxiliary,future,all,negative,subject + won't + base,I won't work.,,After will use base form work.
+G039,auxiliary,future,all,question,will + subject + base?,Will I work?,,After will use base form work.
+G040,auxiliary,future,all,negative_question,won't + subject + base?,Won't I work?,,After will use base form work.
+G041,continuous,present,I,affirmative,I am + verb-ing,I'm turning on my PC.,Estou ligando meu computador.,Use for ongoing actions.
+G042,continuous,present,he/she/it,affirmative,subject + is + verb-ing,My wife is studying.,Minha esposa está estudando.,Present continuous.
+G043,continuous,present,you/we/they,question,Are + subject + verb-ing?,Are you working?,Você está trabalhando?,Be is inverted in questions.
+G044,continuous,present,I,negative,I am not + verb-ing,I'm not working.,Não estou trabalhando.,State verbs like want are not generally progressive.
+G045,continuous,past,I/he/she/it,affirmative,subject + was + verb-ing,I was working.,Eu estava trabalhando.,Introduce progressively once was/were are secure.
+G046,continuous,past,you/we/they,affirmative,subject + were + verb-ing,They were working.,Eles estavam trabalhando.,Introduce progressively.
