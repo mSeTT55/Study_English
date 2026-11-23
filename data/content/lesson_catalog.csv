@@ -1,0 +1,14 @@
+lesson_id,title,topic_id,source_id,target_level,focus,activity,source_url,status,notes
+L001,Tiny actions around the house,T001,,A1-A2,present continuous; to be; routine chunks,Narrate 5 real actions; transform 2 into questions,,queued,Original tutor-created activity
+L002,Discord survival English,T004,,A1-A2,requests; clarifications; turn-taking,Role-play then optional live Discord chat,,queued,Do not record other people's identities
+L003,Today's news in three levels,T011,S005,A1-B1,reading; retelling; past tense,Select a current verified article then summarize,https://www.newsinlevels.com/,queued,Choose article URL/date at lesson time
+L004,Volka story: listen and shadow,T012,S007,to_assess,listening; connected speech; shadowing,Listen; retell; optionally shadow 10–20 seconds,https://www.youtube.com/watch?v=7hG6fvlJoAg,queued,Video exact contents not inspected; no invented script
+L005,Explain a Linux task in English,T006,,A2-B1,commands; sequencing; explanation,Explain a known terminal task then ask/answer questions,,queued,Learner must supply any private command details
+L006,F1 race recap,T008,S022,A2-B1,past simple; opinions; comparisons,Read latest verified race report; give an opinion,https://www.formula1.com/en/latest,queued,Do not invent race results
+L007,From Brazilian tech video to English explanation,T018,S012,A2-B1,paraphrase; technical verbs,Watch Portuguese explanation; summarize in English,https://www.youtube.com/@Akitando,queued,This is output practice not English listening
+L008,English technical interview: explain an automation,T005,,A2-B1,past projects; troubleshooting; present vs past,Mock interviewer and candidate dialogue,,queued,Use only confirmed past experiences
+L009,A short TV-series dialogue,T010,S004,A2,listening; natural chunks,Select a level-appropriate clip; retell dialogue briefly,https://www.listeninenglish.com/,queued,Use URL not copyrighted full transcript
+L010,Fable Cottage story retelling,T012,S003,A1-A2,story sequencing; past/present,Listen or read short accessible story; retell,https://www.thefablecottage.com/languages/english,queued,Choose a free story at lesson time
+L011,Pronunciation in context with YouGlish,T013,S002,A1-B1,sounds; stress; phrase usage,Listen to 2–3 clips with a target phrase and repeat,https://pt.youglish.com/,queued,No copying complete transcripts
+L012,Explain a software concept from Fireship,T007,S011,B1,listening; technical chunks; speaking,Choose short verified video and summarize,https://www.youtube.com/@Fireship,queued,Fast speaking: reduce excerpt and scaffold
+L013,Football post-match conversation,T009,,A2,simple past; opinions,Use verified score to discuss match,,queued,Get current match facts at lesson time
