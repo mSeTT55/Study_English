@@ -25,7 +25,7 @@ No due dates can be justified until practice events are recorded.
 Prioritize meaningful retrieval and communication. Introduce new material only after checking old weak items. Consider a small Discord speaking exchange if the learner wants a real interlocutor; do not record that it happened until reported.
 
 ## Continuity protocol
-Read `state/active_session.md` first; resume pending topic/question if one exists. Keep an exposure log separate from real scored attempts and save compact topic checkpoints when GitHub writes are available. This preference is a **policy**, not a verified example of automation succeeding in Voice.
+At every new session read `state/sync_manifest.json` first and compare it against real learning/exposure/checkpoint events and summaries (IDs, counts, timestamps, GitHub blob SHAs). Diagnose unfinished sessions and repair available persisted evidence before teaching. Then read `state/active_session.md` to resume the pending topic/question. Save batched checkpoints proactively; **read back and verify** records, then advance the manifest only after successful verification. This is a protocol, not evidence that a real Voice session has yet been logged.
 
 ## Persistence
 Repository contents are baseline catalogs and documentation. This file should be overwritten with a compact, truthful summary after each actual persisted study session.
