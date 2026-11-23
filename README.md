@@ -1,6 +1,6 @@
 # Study English
 
-**Adaptive English learning memory — GitHub + ChatGPT + real-life immersion**
+**Voice-first, bilingual English learning memory — GitHub + ChatGPT + real-life immersion**
 
 A small, text-first learning system built to keep English practice coherent across ChatGPT sessions. Rather than only storing lists of words, it tracks **what was introduced, what was actually attempted, what needed help, and what should be reviewed next**.
 
@@ -16,6 +16,8 @@ Chat history can become too long to reliably use as a study database. This repos
 - Mix verb to be, regular/irregular tenses, auxiliaries and useful chunks.
 - Practice present, past, future and present continuous; add more advanced tenses when appropriate.
 - Keep genuine conversation going: **React → Correct → Continue**.
+- **Voice-first and bilingual**: speak manageable English, explain and answer questions in Portuguese as needed, and adapt the balance over time.
+- Proactively save **context checkpoints** at natural boundaries when GitHub writing is actually available.
 - Track listening, recognition, guided production and independent use separately.
 - Personalize by topics: home life, remote work, Discord, gaming, Formula 1, football, technology, Linux, DevOps, programming, data, AI and interviews.
 - Try spaced review, active recall, comprehensible input, pronunciation practice, shadowing and real conversations.
@@ -42,21 +44,31 @@ Study_English/
 │   │   └── lesson_catalog.csv       # Lesson and media queue
 │   └── learning/
 │       ├── learning_events.jsonl    # Append-only real practice attempts
+│       ├── exposure_events.jsonl    # Items introduced/read/heard, not 'mastered'
+│       ├── context_checkpoints.jsonl # Small resumable conversation snapshots
 │       ├── mastery.csv              # Summary per item, skill and form
 │       └── sessions.csv             # Completed sessions only
 ├── scripts/
 │   ├── validate_data.py            # Validate CSV/JSONL and references
 │   └── recalculate_mastery.py      # Derive review state from real attempts
 └── state/
-    └── current_state.md             # Current priorities / next session
+    ├── active_session.md            # Live/paused topic + pending turn
+    └── current_state.md            # Current priorities / next session
 ```
 
-## How to start in ChatGPT Web
-1. Add the [project instructions](instructions/PROJECT_PROMPT.md) to this ChatGPT Project.
-2. Enable a GitHub connection where repository access is available.
-3. At the start of a learning session, ask the tutor to consult [AGENTS.md](AGENTS.md) and [current_state.md](state/current_state.md).
-4. Do a short active review **before** new content.
-5. At the end, record only actual attempts and identify whether files were successfully updated.
+## How to start in ChatGPT Web / Voice
+1. Replace the project instructions with [the Voice-first prompt](instructions/PROJECT_PROMPT.md). It says how to read and synchronize without requiring repeated "remember/save" commands.
+2. Connect an authorized GitHub app/workflow with the permissions available to that chat. The **standard** GitHub app may expose only reading; do not infer writes from a connected status.
+3. Start talking naturally in the same ChatGPT Project. The tutor should check [AGENTS.md](AGENTS.md), [active_session.md](state/active_session.md), and [current_state.md](state/current_state.md) at session entry if tools permit, resuming any unfinished topic.
+4. Continue mainly in English, with Portuguese explanations/questions whenever needed. Review weak content when starting *fresh*, not in the middle of an unfinished topic.
+5. At topic boundaries and before a normal goodbye, the tutor should proactively attempt batched checkpoints and report the **actual** save status. It cannot save after an abrupt call termination or run on its own while ChatGPT is closed.
+
+### How conversation memory survives context limits
+- **Active checkpoint:** current topic, unfinished question, recent corrections and the next move.
+- **Checkpoint log:** short summaries of natural topic transitions, not complete private transcripts.
+- **Learning and exposure events:** separate what the learner actually *produced* from what they only *encountered*.
+- **Project memory:** can help retrieve prior chats but cannot replace verified repository state.
+A checkpoint is a best-effort write at an actual conversational turn, not a continuously running background recorder.
 
 **Important:** putting `AGENTS.md` in GitHub does **not** make ChatGPT automatically read it. Read/write capability depends on the active tools and permissions. Python scripts (if added later) will not run automatically merely because they are in the repository.
 
