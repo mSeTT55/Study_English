@@ -1,0 +1,29 @@
+verb_id,lemma,verb_type,past,past_participle,third_person,ing_form,meaning_pt,priority,source_note
+V001,want,regular,wanted,wanted,wants,wanting,querer,high,prior_image
+V002,need,regular,needed,needed,needs,needing,precisar,high,prior_image
+V003,like,regular,liked,liked,likes,liking,gostar,high,prior_image
+V004,work,regular,worked,worked,works,working,trabalhar,high,prior_image
+V005,play,regular,played,played,plays,playing,jogar / brincar,high,prior_image
+V006,study,regular,studied,studied,studies,studying,estudar,high,prior_image
+V007,wash,regular,washed,washed,washes,washing,lavar,medium,prior_image
+V008,open,regular,opened,opened,opens,opening,abrir,high,prior_image
+V009,start,regular,started,started,starts,starting,começar,high,prior_image
+V010,finish,regular,finished,finished,finishes,finishing,terminar,high,prior_image
+V011,clean,regular,cleaned,cleaned,cleans,cleaning,limpar,medium,prior_image
+V012,go,irregular,went,gone,goes,going,ir,high,prior_image
+V013,have,irregular,had,had,has,having,ter / fazer refeições,high,prior_image
+V014,make,irregular,made,made,makes,making,fazer / criar,high,prior_image
+V015,take,irregular,took,taken,takes,taking,pegar / levar / tomar,high,prior_image
+V016,see,irregular,saw,seen,sees,seeing,ver,high,prior_image
+V017,come,irregular,came,come,comes,coming,vir,high,prior_image
+V018,eat,irregular,ate,eaten,eats,eating,comer,high,prior_image
+V019,buy,irregular,bought,bought,buys,buying,comprar,high,prior_image
+V020,find,irregular,found,found,finds,finding,encontrar,high,prior_image
+V021,send,irregular,sent,sent,sends,sending,enviar,high,prior_image
+V022,teach,irregular,taught,taught,teaches,teaching,ensinar,medium,prior_image
+V023,fight,irregular,fought,fought,fights,fighting,lutar,medium,prior_image
+V024,write,irregular,wrote,written,writes,writing,escrever,high,prior_image
+V025,do,irregular,did,done,does,doing,fazer,high,prior_conversation
+V026,spend,irregular,spent,spent,spends,spending,passar (tempo) / gastar,high,prior_conversation
+V027,visit,regular,visited,visited,visits,visiting,visitar,high,prior_conversation
+V028,watch,regular,watched,watched,watches,watching,assistir / observar,high,prior_conversation
