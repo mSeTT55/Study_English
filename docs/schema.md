@@ -55,6 +55,8 @@ Fields: `item_type`, `item_id`, `skill`, `tense`, `form`, `attempts`, `independe
 The unique key is (`item_type`,`item_id`,`skill`,`tense`,`form`). Suggested levels:
 0 unseen; 1 introduced; 2 developing; 3 independently usable; 4 maintained after delayed correct retrieval. These are operational labels, not scientific CEFR measurements. Do not assign 3/4 without independent evidence. No rows in mastery initially = **not assessed**.
 
+The optional `scripts/recalculate_mastery.py` uses a **provisional**, explicit heuristic: level 2 after an attempted assessment; level 3 after at least 2 correct independent attempts with distinct prompts and a latest independent success; level 4 after at least 3 correct independent attempts spanning at least 7 days, with at least 2 distinct dates and a latest independent success. A later assisted or incorrect answer drops the state to level 2 for that specific skill/form. Review intervals from the last attempt are 1 day after an incorrect attempt, otherwise 2/7/21 days for levels 2/3/4. This is an engineering heuristic, **not** a validated psychological score. Level 1 is a catalog-introduction label and is not generated from evidence events.
+
 ### `data/learning/sessions.csv`
 Fields: `session_id`, `started_at`, `ended_at`, `topic_ids`, `focus_items`, `source_ids`, `notes`, `recorded_events`, `next_steps`.
 Semicolon-separated topic/item IDs. Only record actually completed sessions.
