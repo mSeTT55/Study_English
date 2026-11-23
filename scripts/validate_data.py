@@ -114,6 +114,53 @@ def main() -> int:
     else:
         problem(f"Missing event log: {event_file}")
 
+    # Validate separate exposure and continuity records; no score is inferred.
+    extra_logs = (
+        ("exposure_events.jsonl", "exposure_id",
+         ("session_id", "occurred_at", "item_type", "item_id",
+          "exposure_type", "channel", "source_id", "context_summary")),
+        ("context_checkpoints.jsonl", "checkpoint_id",
+         ("session_id", "created_at", "mode", "topic_id",
+          "conversation_summary", "learner_intent",
+          "last_tutor_question", "pending_reply", "next_move")),
+    )
+    extra_counts: dict[str, int] = {}
+    for filename, id_key, required_keys in extra_logs:
+        path = LEARNING / filename
+        extra_counts[filename] = 0
+        if not path.exists():
+            problem(f"Missing event log: {path}")
+            continue
+        seen: set[str] = set()
+        with path.open(encoding="utf-8") as stream:
+            for line_no, raw in enumerate(stream, 1):
+                if not raw.strip():
+                    continue
+                try:
+                    item = json.loads(raw)
+                except json.JSONDecodeError as exc:
+                    problem(f"{filename}:{line_no}: {exc}")
+                    continue
+                if not isinstance(item, dict):
+                    problem(f"{filename}:{line_no}: object expected")
+                    continue
+                extra_counts[filename] += 1
+                ident = item.get(id_key, "")
+                if not isinstance(ident, str) or not ident or ident in seen:
+                    problem(f"{filename}:{line_no}: missing/duplicate {id_key}")
+                seen.add(ident)
+                for field in required_keys:
+                    if field not in item:
+                        problem(f"{filename}:{line_no}: missing {field}")
+                if filename == "exposure_events.jsonl":
+                    reference(f"{filename}:{line_no}", "item_id",
+                              item.get("item_id", ""), item.get("item_type", ""))
+                    reference(f"{filename}:{line_no}", "source_id",
+                              item.get("source_id", ""), "source")
+                else:
+                    reference(f"{filename}:{line_no}", "topic_id",
+                              item.get("topic_id", ""), "topic")
+
     for name in ("mastery.csv", "sessions.csv"):
         if not (LEARNING / name).exists():
             problem(f"Missing learning summary: {name}")
@@ -124,6 +171,8 @@ def main() -> int:
     for name, rows in tables.items():
         print(f"  {name}: {len(rows)} records")
     print(f"  learning events: {event_count}")
+    for filename, count in extra_counts.items():
+        print(f"  {filename}: {count}")
     if ERRORS:
         print(f"FAILED: {len(ERRORS)} issue(s)")
         for err in ERRORS:
