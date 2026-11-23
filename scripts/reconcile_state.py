@@ -162,12 +162,15 @@ def analyze() -> dict:
         warnings.append("No verified study session has been committed yet; this is the initial baseline")
     if errors:
         status = "invalid"
-    elif drift:
+    elif drift or manifest.get("status") in ("partial", "needs_reconciliation", "unverified"):
         status = "needs_reconciliation"
     elif manifest.get("status") == "baseline_no_study_session":
         status = "baseline_consistent"
-    else:
+    elif manifest.get("status") == "verified":
         status = "consistent"
+    else:
+        status = "invalid"
+        errors.append(f"Unsupported manifest status: {manifest.get('status')!r}")
     return {
         "status": status,
         "generation": manifest.get("generation"),
