@@ -12,34 +12,34 @@
       "count": 0,
       "last_id": null,
       "last_at": null,
-      "blob_sha": null
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
     },
     "data/learning/exposure_events.jsonl": {
       "count": 0,
       "last_id": null,
       "last_at": null,
-      "blob_sha": null
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
     },
     "data/learning/context_checkpoints.jsonl": {
       "count": 0,
       "last_id": null,
       "last_at": null,
-      "blob_sha": null
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
     }
   },
   "state_files": {
     "state/active_session.md": {
-      "blob_sha": null
+      "blob_sha": "a9993600f38517d03eb95772c722dc71e32e4712"
     },
     "state/current_state.md": {
-      "blob_sha": null
+      "blob_sha": "c76d86f597e87547800709c31c73fb95abe5ee50"
     },
     "data/learning/mastery.csv": {
-      "blob_sha": null
+      "blob_sha": "fa7f937fd3da058f11ab8933df291617a3ded8b9"
     },
     "data/learning/sessions.csv": {
-      "blob_sha": null
+      "blob_sha": "675f87ac054932ffb7b0493aa8cca9d925c3cd3f"
     }
   },
-  "notes": "Baseline only. Fill verified_at, blob_shas, committed IDs and hashes after the first real learning-session transaction. No performance or conversation data has yet been observed."
+  "notes": "Verified initial empty learning baseline. No real study events or voice checkpoint recorded yet. Blob SHA fields capture initial file contents for next-start consistency audit."
 }
