@@ -70,7 +70,7 @@ Study_English/
 - **Project memory:** can help retrieve prior chats but cannot replace verified repository state.
 A checkpoint is a best-effort write at an actual conversational turn, not a continuously running background recorder.
 
-**Important:** putting `AGENTS.md` in GitHub does **not** make ChatGPT automatically read it. Read/write capability depends on the active tools and permissions. Python scripts (if added later) will not run automatically merely because they are in the repository.
+**Important:** putting `AGENTS.md` in GitHub does **not** make ChatGPT automatically read it. Read/write capability depends on the active tools and permissions. Python scripts in this repository do not run automatically merely because they are in GitHub.
 
 ## Optional maintenance commands
 
