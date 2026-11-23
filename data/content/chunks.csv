@@ -1,0 +1,30 @@
+chunk_id,text_en,meaning_pt,context,template,focus_grammar_id,topic_id,origin,note
+C001,I spent the afternoon there.,Passei a tarde lá.,daily_life,I spent + time + place,G033,T002,prior_conversation,Past simple: spend → spent.
+C002,I didn't do much yesterday.,Não fiz muita coisa ontem.,daily_life,I didn't do much + time,G034,T002,prior_conversation,After didn't use base form do.
+C003,I had lunch with my parents yesterday.,Almocei com meus pais ontem.,daily_life,I had lunch with + person,G033,T002,prior_conversation,Natural collocation: have lunch → had lunch.
+C004,I taught my dad to ride a motorcycle.,Ensinei meu pai a andar de moto.,daily_life,I taught + person + to + verb,G033,T002,prior_conversation,teach → taught.
+C005,This smells good.,Isso cheira bem.,daily_life,This smells + adjective,G025,T001,prior_conversation,Third person singular smells.
+C006,I went to bed late.,Fui dormir tarde.,daily_life,I went to bed + time,G033,T002,corrected_example,Natural correction of literal 'I went sleep late'.
+C007,I'm turning on my PC.,Estou ligando meu computador.,home,I'm + verb-ing,G041,T001,curated_example,Turn on = ligar aparelho.
+C008,I'm opening a website.,Estou abrindo um site.,home,I'm + verb-ing + object,G041,T001,curated_example,Open a website / go to a website.
+C009,I'm making lunch.,Estou preparando o almoço.,home,I'm + verb-ing + meal,G041,T001,curated_example,make lunch.
+C010,I'm brushing my teeth.,Estou escovando os dentes.,home,I'm + verb-ing + object,G041,T001,curated_example,Brush my teeth.
+C011,I'm taking a shower.,Estou tomando banho.,home,I'm + verb-ing + a shower,G041,T001,curated_example,Take a shower.
+C012,I'm closing the window.,Estou fechando a janela.,home,I'm + verb-ing + object,G041,T001,curated_example,Close the window.
+C013,I'm tired.,Estou cansado.,daily_life,I'm + adjective,G001,T002,curated_example,State with to be.
+C014,My wife is studying.,Minha esposa está estudando.,home,person + is + verb-ing,G042,T001,curated_example,Simple generic example; not a private log.
+C015,I'm thinking about it.,Estou pensando nisso.,daily_life,I'm thinking about + topic,G041,T002,curated_example,Thought in progress.
+C016,Could you say that again?,Você pode repetir isso?,discord,Could you + verb + ...?,,T004,curated_example,Polite request for repetition.
+C017,What does that mean?,O que isso significa?,discord,What does + that + base verb?,G031,T004,curated_example,Survival question.
+C018,Give me a second.,Me dá um segundo.,discord,Give me + a second,,T004,curated_example,Natural filler for live conversation.
+C019,I'm still learning English.,Ainda estou aprendendo inglês.,discord,I'm still + verb-ing,G041,T004,curated_example,Survival phrase.
+C020,I'm heading out.,Estou de saída.,discord,I'm + heading out,G041,T004,curated_example,Natural leaving phrase.
+C021,The server went down during the deployment.,O servidor caiu durante a implantação.,devops_linux,The server + went down + during ...,G033,T006,curated_example,Go down = become unavailable.
+C022,Did the server go down during the deployment?,O servidor caiu durante a implantação?,devops_linux,Did + subject + base verb?,G035,T006,curated_example,"After did use go, not went."
+C023,Could you walk me through your experience?,Você pode explicar sua experiência?,job_interviews,Could you walk me through + topic,,T005,curated_example,Typical interview question.
+C024,I work with Linux and automation.,Trabalho com Linux e automação.,job_interviews,I work with + field,G025,T005,curated_example,Use only when true of the learner.
+C025,I watched a movie yesterday.,Assisti a um filme ontem.,daily_life,I watched + object + past time,G033,T010,prior_conversation,Past of watch is watched.
+C026,Can you hear me?,Você consegue me ouvir?,discord,Can you hear me?,,T004,prior_conversation,Voice-call check.
+C027,I'm joining the voice chat.,Estou entrando no chat de voz.,discord,I'm joining + group,G041,T004,curated_example,Useful before joining Discord.
+C028,How did the race go?,Como foi a corrida?,f1,How did + subject + base verb?,G035,T008,curated_example,Past question with did.
+C029,What did you think of the match?,O que você achou da partida?,football,What did you think of + topic?,G035,T009,curated_example,Past of think is thought; after did use think.
