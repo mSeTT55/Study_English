@@ -22,3 +22,5 @@ S020,British Council LearnEnglish A2 Listening,https://learnenglish.britishcounc
 S021,Breaking News English,https://breakingnewsenglish.com/,graded_news,en,graded news exercises,A1-C1,T011,known_resource,Verify date and level
 S022,Formula 1 Latest,https://www.formula1.com/en/latest,sports_news,en,race news and opinion tasks,varies,T008,known_resource,Verify race/date/result before quoting
 S023,GitHub Engineering Blog,https://github.blog/engineering/,tech_articles,en,technical reading and summarization,B1-C1,T006;T007;T014,known_resource,Simplify the task without falsifying the article
+S024,Professor Kenny,https://www.youtube.com/@PROFESSORKENNYOFICIAL,youtube_channel,pt-en,grammar and pronunciation for Brazilian learners,varies,T013,search_verified,Verify exact public lesson before assigning
+S025,Beyond With John,https://www.youtube.com/@beyondwithjohn,youtube_channel,pt-en,immersion and study techniques,varies,T013,search_verified,Evaluate specific ideas against research; do not assume paid course is needed
