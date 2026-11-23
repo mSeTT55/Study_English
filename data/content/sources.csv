@@ -1,0 +1,24 @@
+source_id,title,url,source_type,language,primary_use,level_hint,topic_ids,verification_status,access_notes
+S001,WordReference,https://www.wordreference.com/,dictionary,en-pt,meanings and usage,all,T013,site_checked,Consult individual words; don't bulk copy dictionary entries
+S002,YouGlish,https://pt.youglish.com/,pronunciation,en,real-speaker context and pronunciation,A2-C2,T013,site_checked,Examples may be from third-party YouTube clips
+S003,The Fable Cottage,https://www.thefablecottage.com/languages/english,graded_stories,en,short stories with audio,A1-B1,T012,site_checked,Some stories/chapters have access restrictions
+S004,Listen in English,https://www.listeninenglish.com/,video_lessons,en,graded clips from TV movies news,A1-C1,T010;T012,site_checked,Use site exercises and original links
+S005,News in Levels,https://www.newsinlevels.com/,graded_news,en,news in 3 learning levels,A1-B1,T011,search_verified,Individual articles require fresh verification
+S006,New General Service List,https://www.newgeneralservicelist.com/word-lists,corpus_wordlist,en,prioritize high-frequency vocabulary,all,T011;T012,known_resource,Source for frequency selection not user mastery
+S007,Volka: Can You Understand and Shadow This English Story?,https://www.youtube.com/watch?v=7hG6fvlJoAg,youtube_video,en,story listening and optional shadowing,to_assess,T012;T013,user_supplied_metadata,Video content was not fully inspected; source link confirmed from Volka website
+S008,Fluente Sem Diploma,https://www.youtube.com/@fluentesemdiploma,youtube_channel,pt-en,English learning video recommendations,varies,T013,user_supplied,Verify exact video before teaching
+S009,FluenteMente,https://www.youtube.com/@FluenteMente,youtube_channel,pt-en,English learning tips and scenarios,varies,T013,user_supplied,Verify exact video before teaching
+S010,World Friends,https://www.youtube.com/@worldfriends77,youtube_channel,varies,international conversations and cultural comparisons,varies,T004;T017,user_supplied,Verify exact video and language before recommending
+S011,Fireship,https://www.youtube.com/@Fireship,youtube_channel,en,short technology explainers,B1-C1,T007;T014;T015,user_supplied,Often fast-paced; use short clips and scaffolding
+S012,Akitando,https://www.youtube.com/@Akitando,youtube_channel,pt,explain technical concepts later in English,varies,T018;T006;T007,user_supplied,Portuguese input is not English listening practice
+S013,Lucas Montano,https://www.youtube.com/@LucasMontano,youtube_channel,pt,learn topic in Portuguese then explain in English,varies,T018;T007,user_supplied,Portuguese input is not English listening practice
+S014,Mano Deyvin,https://www.youtube.com/@manodeyvin,youtube_channel,pt,technology conversations retold in English,varies,T018;T007,user_supplied,Portuguese input is not English listening practice
+S015,Volka 5000 words textbook,https://volkaenglish.com/en-brl/products/new-5000-english-words-vocabulary-textbook-combo-985-pages,paid_reference,en,compare public organization and syllabus,varies,T013,user_supplied,Paid material; do not copy content
+S016,Volka study pack,https://volkaenglish.com/en-brl/products/volka-english-ultimate-study-pack-bundle-100,paid_reference,en,compare public syllabus and study methods,varies,T013,user_supplied,Paid material; do not copy content
+S017,Volka 2000 intermediate/advanced words,https://volkaenglish.com/en-brl/products/new-2000-intermediate-to-advanced-english-vocabulary-textbook-398-pages,paid_reference,en,higher-level word-list organization,B1-C1,T013,user_supplied,Paid material; do not copy content
+S018,Volka 3000 common words,https://volkaenglish.com/en-brl/products/updated-3000-most-common-english-words-textbook-587-pages,paid_reference,en,public structure for frequency lists,A1-B2,T013,user_supplied,Paid material; do not copy content
+S019,VOA Learning English,https://learningenglish.voanews.com/,graded_news,en,slower news audio and reading,A1-B1,T011,known_resource,Check current date and availability
+S020,British Council LearnEnglish A2 Listening,https://learnenglish.britishcouncil.org/free-resources/listening/a2,graded_listening,en,level-aligned listening tasks,A2,T002;T004,known_resource,Work within site's permitted use
+S021,Breaking News English,https://breakingnewsenglish.com/,graded_news,en,graded news exercises,A1-C1,T011,known_resource,Verify date and level
+S022,Formula 1 Latest,https://www.formula1.com/en/latest,sports_news,en,race news and opinion tasks,varies,T008,known_resource,Verify race/date/result before quoting
+S023,GitHub Engineering Blog,https://github.blog/engineering/,tech_articles,en,technical reading and summarization,B1-C1,T006;T007;T014,known_resource,Simplify the task without falsifying the article
