@@ -1,0 +1,18 @@
+from_type,from_id,relation,to_type,to_id,notes
+chunk,C001,uses_verb,verb,V026,spend → spent
+chunk,C002,uses_verb,verb,V025,didn't do
+chunk,C003,uses_verb,verb,V013,had lunch
+chunk,C004,uses_verb,verb,V022,teach → taught
+chunk,C007,uses_grammar,grammar,G041,present continuous
+chunk,C009,uses_verb,verb,V014,make → making
+chunk,C011,uses_verb,verb,V015,take → taking
+chunk,C021,uses_verb,verb,V012,go → went
+chunk,C022,uses_grammar,grammar,G035,did question; base verb
+chunk,C022,uses_verb,verb,V012,go
+chunk,C028,uses_grammar,grammar,G035,past simple question
+lesson,L001,practices,grammar,G041,daily action narration
+lesson,L002,practices,chunk,C016,request repetition
+lesson,L004,uses_source,source,S007,user-provided shadowing video
+lesson,L006,uses_source,source,S022,current F1 reports
+lesson,L007,uses_source,source,S012,Portuguese tech video
+lesson,L011,uses_source,source,S002,real-world pronunciation
